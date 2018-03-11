@@ -61,6 +61,24 @@ public class Devoir_II_8INF808_ROMANET_AGAVIOS {
             testJonhson(path+"tai100_10.txt",1);
             testJonhson(path+"tai100_20.txt",0);
             testJonhson(path+"tai100_20.txt",1);
+            
+            System.out.println("TESTS DE GUPTA :");
+            testGupta(path+"tai20_5.txt",0);
+            testGupta(path+"tai20_5.txt",1);
+            testGupta(path+"tai20_10.txt",0);
+            testGupta(path+"tai20_10.txt",1);
+            testGupta(path+"tai50_5.txt",0);
+            testGupta(path+"tai50_5.txt",1);
+            testGupta(path+"tai50_10.txt",0);
+            testGupta(path+"tai50_10.txt",1);
+            testGupta(path+"tai50_20.txt",0);
+            testGupta(path+"tai50_20.txt",1);
+            testGupta(path+"tai100_5.txt",0);
+            testGupta(path+"tai100_5.txt",1);
+            testGupta(path+"tai100_10.txt",0);
+            testGupta(path+"tai100_10.txt",1);
+            testGupta(path+"tai100_20.txt",0);
+            testGupta(path+"tai100_20.txt",1);
 
         } catch (IOException ex) {
             Logger.getLogger(Devoir_II_8INF808_ROMANET_AGAVIOS.class.getName()).log(Level.SEVERE, null, ex);
@@ -78,6 +96,12 @@ public class Devoir_II_8INF808_ROMANET_AGAVIOS {
     public static void testJonhson(String file, int jeudedonnees) throws IOException{
         Data data = new Data(file,jeudedonnees);
         Jonhson resolution = new Jonhson(data);
+        resolution.printSolution();
+    }
+    
+    public static void testGupta(String file, int jeudedonnees) throws IOException{
+        Data data = new Data(file,jeudedonnees);
+        Gupta resolution = new Gupta(data);
         resolution.printSolution();
     }
     
