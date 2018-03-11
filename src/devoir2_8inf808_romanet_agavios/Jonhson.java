@@ -18,8 +18,20 @@ public class Jonhson extends Regle{
     
     public Jonhson(Data data) {
         super(data);
+        this.data.machinesnumber=2;
         reste=data.machinesrequirements;
         resoud();
+    }
+    
+    public Jonhson(Data data,List<Integer> heuristiques1,List<Integer> heuristiques2) {
+        super(data);
+        this.data.machinesnumber=2;
+        this.data.machinesrequirements.clear();
+        this.data.machinesrequirements.add(heuristiques1);
+        this.data.machinesrequirements.add(heuristiques2);
+        reste=this.data.machinesrequirements;
+        resoud();
+        calculMakespan();
     }
     
     public void resoud(){
@@ -40,7 +52,7 @@ public class Jonhson extends Regle{
                 solutiondroite.add(0,mintravail);
                 //nbredroit++;
             }
-                    minimums=trouverJobMinimum();
+            minimums=trouverJobMinimum();
 
         }
         for(int i : solutiondroite){
@@ -64,8 +76,13 @@ public class Jonhson extends Regle{
         }
         resultat[0]=travail;
         resultat[1]=machine;
-        reste.get(machine).set(travail,Integer.MAX_VALUE);
-        if(minimum==Integer.MAX_VALUE)return null;
+        for(int i=0;i<data.machinesnumber;i++){
+         reste.get(i).set(travail,Integer.MAX_VALUE);
+        }
+        
+        if(minimum==Integer.MAX_VALUE){
+            return null;
+        }
         return resultat;
     }
 }

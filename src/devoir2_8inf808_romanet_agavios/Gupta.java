@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Gupta extends Regle{
     
-    public List<Integer> heuristiques;
+    public List<Float> heuristiques;
     public List<Integer> e;
     
     public Gupta(Data data) {
@@ -36,7 +36,7 @@ public class Gupta extends Regle{
             else{
                 e.add(-1);
             }
-            heuristiques.add(e.get(i)/pMinimum(i));
+            heuristiques.add((float)e.get(i)/pMinimum(i));
         }
         solution.add(0);
         boolean minimum=true;
@@ -44,6 +44,7 @@ public class Gupta extends Regle{
             for(int j=0;j<solution.size();j++){
                 if(heuristiques.get(k)>heuristiques.get(solution.get(j))){
                     solution.add(j,k);
+                    j+=solution.size();
                     minimum=false;
                 }
             }

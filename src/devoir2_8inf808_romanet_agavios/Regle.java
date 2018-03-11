@@ -16,6 +16,7 @@ public class Regle {
     
     public List<Integer> solution;
     public Data data;
+    public int makespan;
     
     public Regle(Data data){
         this.data=data;
@@ -45,6 +46,7 @@ public class Regle {
                 machines.get(i).add(totaltemps);
             }
         }
+        this.makespan=totaltemps;
       return totaltemps;
     }
     
