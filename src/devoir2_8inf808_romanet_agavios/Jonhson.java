@@ -19,7 +19,7 @@ public class Jonhson extends Regle{
     public Jonhson(Data data) {
         super(data);
         this.data.machinesnumber=2;
-        reste=data.machinesrequirements;
+        reste= new ArrayList(data.machinesrequirements);
         resoud();
     }
     
@@ -29,7 +29,10 @@ public class Jonhson extends Regle{
         this.data.machinesrequirements.clear();
         this.data.machinesrequirements.add(heuristiques1);
         this.data.machinesrequirements.add(heuristiques2);
-        reste=this.data.machinesrequirements;
+        reste=new ArrayList();
+        for(List<Integer> list : data.machinesrequirements){
+            reste.add(new ArrayList(list));
+        }
         resoud();
         calculMakespan();
     }

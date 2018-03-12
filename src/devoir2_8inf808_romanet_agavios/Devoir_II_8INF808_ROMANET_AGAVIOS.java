@@ -97,6 +97,24 @@ public class Devoir_II_8INF808_ROMANET_AGAVIOS {
             testCDS(path+"tai100_10.txt",1);
             testCDS(path+"tai100_20.txt",0);
             testCDS(path+"tai100_20.txt",1);
+            
+            System.out.println("TESTS SEP :");
+            testSEP(path+"tai20_5.txt",0);
+            testSEP(path+"tai20_5.txt",1);
+            testSEP(path+"tai20_10.txt",0);
+            testSEP(path+"tai20_10.txt",1);
+            testSEP(path+"tai50_5.txt",0);
+            testSEP(path+"tai50_5.txt",1);
+            testSEP(path+"tai50_10.txt",0);
+            testSEP(path+"tai50_10.txt",1);
+            testSEP(path+"tai50_20.txt",0);
+            testSEP(path+"tai50_20.txt",1);
+            testSEP(path+"tai100_5.txt",0);
+            testSEP(path+"tai100_5.txt",1);
+            testSEP(path+"tai100_10.txt",0);
+            testSEP(path+"tai100_10.txt",1);
+            testSEP(path+"tai100_20.txt",0);
+            testSEP(path+"tai100_20.txt",1);
 
         } catch (IOException ex) {
             Logger.getLogger(Devoir_II_8INF808_ROMANET_AGAVIOS.class.getName()).log(Level.SEVERE, null, ex);
@@ -126,6 +144,12 @@ public class Devoir_II_8INF808_ROMANET_AGAVIOS {
     public static void testCDS(String file, int jeudedonnees) throws IOException{
         Data data = new Data(file,jeudedonnees);
         CDS resolution = new CDS(data);
+        resolution.printSolution();
+    }
+    
+    public static void testSEP(String file, int jeudedonnees) throws IOException{
+        Data data = new Data(file,jeudedonnees);
+        SEP resolution = new SEP(data);
         resolution.printSolution();
     }
     
