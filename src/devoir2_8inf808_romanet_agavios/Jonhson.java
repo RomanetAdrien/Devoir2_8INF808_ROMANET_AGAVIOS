@@ -19,7 +19,10 @@ public class Jonhson extends Regle{
     public Jonhson(Data data) {
         super(data);
         this.data.machinesnumber=2;
-        reste= new ArrayList(data.machinesrequirements);
+        reste=new ArrayList();
+        for(List<Integer> list : data.machinesrequirements){
+            reste.add(new ArrayList(list));
+        }
         resoud();
     }
     
@@ -53,7 +56,6 @@ public class Jonhson extends Regle{
             }
             else{
                 solutiondroite.add(0,mintravail);
-                //nbredroit++;
             }
             minimums=trouverJobMinimum();
 
