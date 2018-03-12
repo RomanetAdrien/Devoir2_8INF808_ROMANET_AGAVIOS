@@ -24,7 +24,9 @@ public class Devoir_II_8INF808_ROMANET_AGAVIOS {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String path = "C:\\Users\\Malomek\\Documents\\NetBeansProjects\\Devoir28INF808ROMANETAGAVIOS\\src\\devoir2_8inf808_romanet_agavios\\data\\";
+        //String path = "C:\\Users\\Malomek\\Documents\\NetBeansProjects\\Devoir28INF808ROMANETAGAVIOS\\src\\devoir2_8inf808_romanet_agavios\\data\\";
+        String path = "src\\devoir2_8inf808_romanet_agavios\\data\\";
+
         try {
             System.out.println("TESTS DE PALMER :");
             testPalmer(path+"tai20_5.txt",0);
